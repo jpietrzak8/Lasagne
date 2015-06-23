@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/dash.svg</file>
+        <file>icons/plus.svg</file>
+        <file>icons/lasagne64.png</file>
+        <file>doc/about.html</file>
+        <file>doc/documentation.html</file>
+    </qresource>
+</RCC>
