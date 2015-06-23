@@ -1,0 +1,157 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Lasagne Barcode-based Inventory Management
+</title>
+</head>
+
+<body>
+
+<h1>Lasagne Documentation</h1>
+
+<p>
+Lasagne is a fairly simple app which ties together a barcode scanner with
+a small spreadsheet.  The expected use is to take the phone to where items
+are located, collect their associated barcodes, and then download those
+barcodes into a standard spreadsheet program on another computer.
+<p>
+
+<h2>Main Screen</h2>
+
+<p>
+The majority of the main Lasagne screen is a view onto the spreadsheet.
+Below this is a row of controls, consisting of an icon that looks like
+a plus sign (used to add new rows), a space for a cell label, an editor
+(to modify the content of cells), and an icon that looks like a minus sign
+(used to access a variety of miscellaneous actions).
+</p>
+
+<p>
+When you first start Lasagne, the spreadsheet will be empty.  It will need
+to be populated by scanning items in via the Add New Row button (which is
+described below).  However, when Lasagne is closed, it will remember the
+spreadsheet file currently in use, and reload that file the next time it
+is launched.
+</p>
+
+<h3>Spreadsheet</h3>
+
+<p>
+The spreadsheet functionality is limited.  It contains five
+columns (Barcode, Name, Description, Quantity, and Location) which, at
+the moment, cannot be modified.  Individual cells can be selected and
+edited; all cells are treated as string data, so no mathematical functions
+can be applied.
+</p>
+
+<h3>Add New Row Button</h3>
+
+<p>
+New rows are added to the spreadsheet via the Add New Row button (which
+looks like a plus sign).  Clicking on this button will bring up the barcode
+scanner window.  Please see "Barcode Scanning" below for more information.
+</p>
+
+<h3>Cell Editor</h3>
+
+<p>
+At the center bottom of the main screen is the cell editor.  When you click
+on an individual cell, the contents of that cell are displayed in the editor.
+If you modify the contents of that editor and then press return (the key that
+looks like a bent arrow), the cell will be updated to contain those new
+contents.
+</p>
+
+<h3>Actions Button</h3>
+
+<p>
+The Actions button (which looks like a minus sign) contains a selection of
+commonly-used actions.  The first two actions are "Clear Cell" and "Remove
+Row"; both of these actions require that you first select a cell.  The
+"Clear Cell" action will remove the contents of the chosen cell; the 
+"Remove Row" action will remove the entire row containing the selected cell.
+Please note that these actions cannot be un-done!
+</p>
+
+<p>
+The file manipulation actions are "Load Spreadsheet", "Save Spreadsheet", and
+"Save Spreadsheet As".  By default, all spreadsheets are stored in the
+user's "Documents" directory (which is "/home/user/MyDocs/.documents"),
+but Lasagne should be able to store and retrieve files from any directory
+you would like to use.  The "Save Spreadsheet" command will simply save
+the current spreadsheet data to the current file; the "Load" and
+"Save As" actions will first ask you to select the name of a file before
+loading or saving, respectively.
+</p>
+
+<p>
+Lasagne saves its data in
+<a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma Separated Values (CSV)</a>
+format.  This should make it fairly easy to import Lasagne files into more
+full-featured spreadsheet applications.
+</p>
+
+<h2>Barcode Scanning</h2>
+
+<p>
+Lasagne uses a separate window for scanning barcodes, which is activated by
+pressing the "Add New Row" button on the main screen.  This window consists
+of a video display from the phone's main camera (on the left side), and
+an array of buttons on the right side.
+</p>
+
+<p>
+The intended use here is that you place the camera at an appropriate distance
+from an item's barcode, allow Lasagne to scan the barcode, fill in the
+rest of the details for the item (on a dialog box that appears), and then
+move on to the next item.  When you have finished collecting barcodes,
+simply hit the "close" button (or the blue "return" arrow at the top right
+of the screen).
+</p>
+
+<p>
+There are a handful of controls on the right of the screen to control the
+video input:
+</p>
+
+<h3>Light</h3>
+
+<p>
+This button will toggle the camera's LED.  This is useful for scanning
+barcodes in dark conditions.
+</p>
+
+<h3>Focus Up / Focus Down</h3>
+
+<p>
+These buttons will change the focus distance of the camera.  However,
+please note that modifying the focus manually can take a great deal of
+time; simply moving the camera itself to an appropriate distance from
+the barcode is much faster.  (This is also much faster than using the
+autofocus mechanism; and since there are several other downsides with
+using autofocus, it is not currently supported in Lasagne.)
+</p>
+
+<h3>Exp Up / Exp Down</h3>
+
+<p>
+These controls manage the camera's "Exposure" value.  This control can be
+particularly handy in situations where the ambient light is especially
+bright or dim, or when the barcode is placed on a reflective surface.
+</p>
+
+<h3>New Item Entry Dialog</h3>
+
+<p>
+Each time a barcode is detected, a dialog box will pop up; this dialog
+allows you to enter additonal information about the item.  You are free
+to edit some, all, or none of these fields.  When you press "Done", the
+item will be added to the spreadsheet.  You can also click off the top of
+the dialog box to cancel adding this item to the spreadsheet.
+</p>
+
+</body>
+
+</html>
