@@ -50,3 +50,11 @@ void LasOptionsDialog::on_saveAsButton_clicked()
   emit saveFileAs();
   accept();
 }
+
+/*
+void LasOptionsDialog::on_newButton_clicked()
+{
+  emit newFile();
+  accept();
+}
+*/

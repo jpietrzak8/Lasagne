@@ -690,6 +690,14 @@ void MainWindow::load()
   csvModel = new LasCsvModel(currentFilename, this, true);
 
   table->setModel(csvModel);
+
+  table->resizeAllCells();
+
+  connect(
+    table->selectionModel(),
+    SIGNAL(currentChanged(const QModelIndex &, const QModelIndex &)),
+    this,
+    SLOT(updateToolbar(const QModelIndex &)));
 }
 
 

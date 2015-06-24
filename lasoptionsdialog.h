@@ -19,6 +19,7 @@ signals:
 //  void editFormula();
   void clearCell();
   void removeRow();
+//  void newFile();
   void loadFile();
   void saveFile();
   void saveFileAs();
@@ -30,6 +31,7 @@ private slots:
   void on_loadButton_clicked();
   void on_saveButton_clicked();
   void on_saveAsButton_clicked();
+//  void on_newButton_clicked();
 
 private:
   Ui::LasOptionsDialog *ui;

@@ -7,16 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
-    <number>8</number>
-   </property>
    <item>
     <widget class="QPushButton" name="clearCellButton">
      <property name="sizePolicy">
